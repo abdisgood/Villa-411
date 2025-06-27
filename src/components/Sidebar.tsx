@@ -19,6 +19,7 @@ interface SidebarProps {
 const navItems = [
   { text: "Project", to: "/", anchor: "#overview" },
   { text: "Residents", to: "/", anchor: "#residents" },
+  { text: "The Family", to: "/family" },
   { text: "Requirements", to: "/requirements" },
   { text: "Inspiration", to: "/inspiration" },
   { text: "Contact", to: "/", anchor: "#contact" },

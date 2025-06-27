@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import RequirementsPage from "./pages/RequirementsPage";
+import FamilyPage from "./pages/FamilyPage";
 import Sidebar from "./components/Sidebar";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/inspiration" element={<GalleryPage />} />
           <Route path="/requirements" element={<RequirementsPage />} />
+          <Route path="/family" element={<FamilyPage />} />
         </Routes>
       </main>
     </Router>

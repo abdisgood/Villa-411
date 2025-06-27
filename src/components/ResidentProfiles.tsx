@@ -5,7 +5,9 @@ import {
   Typography,
   Box,
   CardMedia,
+  Button,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const profiles = [
   {
@@ -41,6 +43,8 @@ const profiles = [
 ];
 
 const ResidentProfiles = () => {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ py: 8, backgroundColor: "background.default" }}>
       <Container maxWidth="lg">
@@ -90,6 +94,16 @@ const ResidentProfiles = () => {
               </Card>
             </Box>
           ))}
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => navigate("/family")}
+            sx={{ px: 4, py: 1.5 }}
+          >
+            Learn More About The Family
+          </Button>
         </Box>
       </Container>
     </Box>
