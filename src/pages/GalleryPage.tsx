@@ -135,25 +135,67 @@ const GalleryPage = () => {
   return (
     <Box sx={{ py: 4 }}>
       <Container maxWidth={false}>
-        <Typography variant="h4" component="h1" gutterBottom align="center">
+        <Typography 
+          variant="h4" 
+          component="h1" 
+          gutterBottom 
+          align="center"
+          sx={{
+            mb: 4,
+            fontWeight: 'bold',
+          }}
+        >
           Inspiration Gallery
         </Typography>
         <ImageList variant="masonry" cols={4} gap={16}>
           {allImageFiles.map((filename) => {
             const item = metadata[filename];
             return (
-              <ImageListItem key={filename}>
+              <ImageListItem 
+                key={filename}
+                sx={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease-in-out',
+                  borderRadius: '8px',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 16px 40px rgba(0,0,0,0.3)',
+                  },
+                  '&:hover img': {
+                    transform: 'scale(1.15)',
+                    filter: 'brightness(0.8)',
+                  },
+                  '&:hover .MuiImageListItemBar-root': {
+                    transform: 'translateY(0)',
+                  }
+                }}
+              >
                 <img
                   src={`/images/inspiration/${filename}?w=248&fit=crop&auto=format`}
                   srcSet={`/images/inspiration/${filename}?w=248&fit=crop&auto=format&dpr=2 2x`}
                   alt={item?.comment || filename}
                   loading="lazy"
+                  style={{
+                    borderRadius: '8px',
+                    transition: 'transform 0.3s ease-in-out, filter 0.3s ease-in-out',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
                 />
                 {item && (
                   <ImageListItemBar
                     title={item.category}
                     subtitle={<span>{item.comment}</span>}
-                    position="below"
+                    sx={{
+                      background:
+                        'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                      borderRadius: '0 0 8px 8px',
+                      transform: 'translateY(100%)',
+                      transition: 'transform 0.3s ease-in-out',
+                    }}
                   />
                 )}
               </ImageListItem>

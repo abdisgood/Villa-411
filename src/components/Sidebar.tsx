@@ -66,7 +66,16 @@ const Sidebar = ({ open, onClose }: SidebarProps) => {
         <Typography variant="h6" component="div">
           Menu
         </Typography>
-        <IconButton onClick={onClose}>
+        <IconButton 
+          onClick={onClose}
+          sx={{
+            transition: 'all 0.3s ease-in-out',
+            '&:hover': {
+              transform: 'rotate(180deg)',
+              backgroundColor: 'rgba(0,0,0,0.08)',
+            }
+          }}
+        >
           <CloseIcon />
         </IconButton>
       </Box>
@@ -78,14 +87,60 @@ const Sidebar = ({ open, onClose }: SidebarProps) => {
         role="presentation"
       >
         <List>
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <ListItem key={item.text} disablePadding>
               <ListItemButton
                 onClick={() => handleLinkClick(item.to, item.anchor)}
-                sx={{ py: 1 }}
+                sx={{ 
+                  py: 1,
+                  borderRadius: 2,
+                  mb: 1,
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease-in-out',
+                  animation: `slideInRight 0.5s ease-out ${index * 0.1}s`,
+                  animationFillMode: 'backwards',
+                  '@keyframes slideInRight': {
+                    from: {
+                      opacity: 0,
+                      transform: 'translateX(20px)',
+                    },
+                    to: {
+                      opacity: 1,
+                      transform: 'translateX(0)',
+                    },
+                  },
+                  '&:hover': {
+                    backgroundColor: 'primary.main',
+                    color: 'white',
+                    transform: 'translateX(10px)',
+                    '& .MuiListItemText-primary': {
+                      fontWeight: 600,
+                    }
+                  },
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: '-100%',
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                    transition: 'left 0.5s ease-in-out',
+                  },
+                  '&:hover::before': {
+                    left: '100%',
+                  }
+                }}
               >
                 <ListItemText
-                  primaryTypographyProps={{ variant: "h6", sx: { fontWeight: 400 } }}
+                  primaryTypographyProps={{ 
+                    variant: "h6", 
+                    sx: { 
+                      fontWeight: 400,
+                      transition: 'font-weight 0.3s ease-in-out'
+                    } 
+                  }}
                   primary={item.text}
                 />
               </ListItemButton>

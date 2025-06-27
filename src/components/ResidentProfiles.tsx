@@ -60,16 +60,51 @@ const ResidentProfiles = () => {
               sx={{ width: { xs: "100%", md: "33.33%" } }}
               key={profile.name}
             >
-              <Card sx={{ height: "100%", border: "none" }}>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={profile.image}
-                  alt={profile.name}
-                  sx={{ objectFit: "cover" }}
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
+              <Card 
+                sx={{ 
+                  height: "100%", 
+                  border: "none",
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-10px)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                  },
+                  '&:hover .MuiCardMedia-root': {
+                    transform: 'scale(1.1)',
+                  },
+                  '&:hover .MuiCardContent-root': {
+                    backgroundColor: 'rgba(0,0,0,0.02)',
+                  }
+                }}
+              >
+                <Box sx={{ overflow: 'hidden', height: 300 }}>
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={profile.image}
+                    alt={profile.name}
+                    sx={{ 
+                      objectFit: "cover",
+                      transition: 'transform 0.3s ease-in-out',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </Box>
+                <CardContent sx={{ transition: 'background-color 0.3s ease-in-out' }}>
+                  <Typography 
+                    variant="h5" 
+                    component="h3" 
+                    gutterBottom
+                    sx={{
+                      transition: 'color 0.3s ease-in-out',
+                      '.MuiCard-root:hover &': {
+                        color: 'primary.main',
+                      }
+                    }}
+                  >
                     {profile.name}
                   </Typography>
                   <Typography

@@ -17,6 +17,13 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             fontFamily: "'Ballet', cursive", 
             color: '#B8860B', // DarkGoldenRod - an elegant gold
             fontWeight: 500,
+            cursor: 'pointer',
+            transition: 'all 0.3s ease-in-out',
+            '&:hover': {
+              color: '#FFD700', // Gold
+              transform: 'scale(1.05)',
+              textShadow: '0 0 10px rgba(255, 215, 0, 0.5)',
+            }
           }}
         >
           Villa 411
@@ -27,6 +34,13 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             color="inherit"
             aria-label="menu"
             onClick={onMenuClick}
+            sx={{
+              transition: 'all 0.3s ease-in-out',
+              '&:hover': {
+                backgroundColor: 'rgba(184, 134, 11, 0.1)',
+                transform: 'rotate(90deg)',
+              }
+            }}
         >
             <MenuIcon />
         </IconButton>
