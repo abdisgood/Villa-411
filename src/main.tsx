@@ -5,6 +5,9 @@ import './index.css'
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme.ts';
 
+// Initialize Firebase
+import './config/firebase';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
