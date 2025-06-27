@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && firebase deploy",
-    "deploy:hosting": "npm run build && firebase deploy --only hosting"
+    "deploy:hosting": "npm run build && firebase deploy --only hosting",
+    "migrate:images": "node scripts/migrate-images-to-firebase.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
