@@ -19,15 +19,76 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '3rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '2.5rem',
+      },
+    },
+    h2: {
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '2.5rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '2rem',
+      },
+    },
+    h3: {
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '2rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '1.75rem',
+      },
+    },
     h4: {
-      fontWeight: 500,
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '1.75rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '1.5rem',
+      },
     },
     h5: {
-      fontWeight: 500,
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '1.5rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '1.25rem',
+      },
     },
     h6: {
+      fontFamily: '"Felipa", cursive',
+      fontWeight: 400,
+      fontSize: '1.25rem',
+      letterSpacing: '0.02em',
+      '@media (max-width:600px)': {
+        fontSize: '1.1rem',
+      },
+    },
+    body1: {
+      fontWeight: 400,
+      lineHeight: 1.7,
+      fontSize: '1rem',
+      letterSpacing: '0.01em',
+    },
+    body2: {
+      fontWeight: 400,
+      lineHeight: 1.6,
+      fontSize: '0.875rem',
+      letterSpacing: '0.01em',
+    },
+    button: {
       fontWeight: 500,
+      letterSpacing: '0.02em',
     },
   },
   components: {
@@ -55,6 +116,8 @@ const theme = createTheme({
             root: {
                 borderRadius: '0',
                 textTransform: 'none',
+                fontFamily: '"Open Sans", sans-serif',
+                fontWeight: 500,
             }
         }
     }
