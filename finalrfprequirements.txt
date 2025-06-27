@@ -1,0 +1,45 @@
+Finalized RFP Requirements
+Extensions:
+Gym, solarium, bay windows, pergolas/shades are required.
+Bedrooms:
+Enlarge and reconfigure both bedrooms for more wardrobe space, possibly using a multi-level configuration (sleeping + study/activity zones).
+Budget:
+Leave open for proposals.
+3D Renders:
+Must-have deliverable.
+Timeline:
+60 days for the design phase.
+Furniture:
+Scope for new pieces in addition to existing classic/ethnic furniture.
+Reference Images:
+You have a library of categorized and commented images to illustrate design direction and mood.
+RFP Website:
+Single-page Vite site, hosted on Firebase.
+All project files in @/250627 RFP.
+RFP text and reference images (categorized, commented) presented clearly.
+Firebase initialized with your provided config.
+
+Implementation Plan
+1. Image Handling
+I’ll analyze each image in /d:/00 Daily Tasks/250627 RFP/QuickShare_2506271027/, categorize it (e.g., Living Room, Lighting, Textures, Outdoor, etc.), and write a short comment on the design inspiration or desirable elements for your project.
+The images will be uploaded to Firebase Storage, and the site will display them in a categorized, commented gallery.
+2. Branding & UI
+Elegant, minimalistic design.
+Warm, friendly feel.
+Color palette: white, black, gold accents, and subtle color pops.
+Clean, modern typography.
+3. Site Structure
+Home/Overview: Project summary, RFP download, contact info.
+RFP Details: Full RFP text, downloadable as PDF.
+Gallery: Categorized, commented image inspiration.
+Contact: Submission instructions and client details.
+4. Firebase Integration
+Use your provided config.
+Upload images to Firebase Storage and display them dynamically.
+Next Steps
+Scaffold Vite + React project in @/250627 RFP.
+Set up Firebase (initialize app, connect storage).
+Script to upload images from your local folder to Firebase Storage.
+Analyze, categorize, and comment on each image.
+Build the gallery UI to display images by category with comments.
+Implement RFP and branding as described.
